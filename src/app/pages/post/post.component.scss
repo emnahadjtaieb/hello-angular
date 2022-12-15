@@ -1,0 +1,24 @@
+@import "src/assets/sass/_common.scss";
+.lay-post {
+    position: relative;
+
+    >.btn {
+        height: 70px;
+
+        >.btn-add {
+            height: 50px;
+            background-color: #08288b;
+            border: 2px solid #08288b;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            position: absolute;
+            right: 5px;
+
+        }
+    }
+}
+
+
+
+

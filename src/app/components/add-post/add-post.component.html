@@ -1,0 +1,33 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <label>Title</label>
+    <nz-form-control nzHasFeedback>
+      <input nz-input formControlName="title" placeholder="Title"/>
+    </nz-form-control>
+    <div *ngIf="validateForm.controls['title'].invalid && validateForm.controls['title'].touched">
+      <div *ngIf="validateForm.controls['title'].errors?.['required']" class="alert-message">
+        title is required.
+      </div>
+    </div>
+  </nz-form-item>
+
+  <nz-form-item>
+    <label>Body</label>
+    <nz-form-control nzHasFeedback>
+      <textarea formControlName="body" nz-input rows="5" placeholder="Body"></textarea>
+    </nz-form-control>
+
+    <div *ngIf="validateForm.controls['body'].invalid && validateForm.controls['body'].touched">
+      <div *ngIf="validateForm.controls['body'].errors?.['required']" class="alert-message">
+        body is required.
+      </div>
+    </div>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button nz-button nzType="primary">Submit</button>
+      <button nz-button (click)="resetForm($event)">Reset</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

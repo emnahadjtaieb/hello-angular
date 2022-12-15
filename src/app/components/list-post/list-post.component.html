@@ -1,0 +1,28 @@
+<nz-table #rowTable
+nzBordered
+[nzData]="listposts"
+nzShowPagination
+nzShowSizeChanger
+[nzPageSize]="6"
+[nzPageSizeOptions]="[3,6,9]"> 
+
+<div class="teaser-standard-triple" *ngIf="isLoading" >
+  <div class="teaser-element" *ngFor="let item of [0, 1, 2, 3, 4, 5, 6]">
+      <nz-skeleton-element [nzActive]="true" nzType="image"></nz-skeleton-element>
+      <nz-skeleton [nzActive]="true" [nzParagraph]="{ rows: 4 }"></nz-skeleton>
+  </div>
+</div>
+
+<div class="teaser-standard-triple" *ngIf="!isLoading" >
+  <div class="teaser-element" *ngFor="let post of rowTable.data">
+        <nz-card nzHoverable  [nzCover]="coverTemplate" routerLink="/post-details/{{post.id}}">
+          <nz-card-meta nzTitle="{{post.title}}"></nz-card-meta>
+          <p class="description">{{post.body| slice:0:50}}...</p>
+          <a class="link"routerLink="/post/{{post.id}}"> Read more</a> 
+        </nz-card>
+        <ng-template #coverTemplate >
+          <img alt="example" src="https://picsum.photos/400/600?t={{post.id}}">
+        </ng-template> 
+  </div>
+</div>
+</nz-table>

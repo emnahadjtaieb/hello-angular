@@ -1,0 +1,63 @@
+@import "src/assets/sass/_common.scss";
+
+.teaser-standard-triple {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    >.teaser-element {
+        padding: 5px;
+        width: 100%;
+
+        @include mq(tablet) {
+            width: calc(6 / 12)*100%;
+        }
+
+        @include mq(desktop) {
+            width: calc(4 / 12)*100%;
+        }
+
+        img {
+            min-height: 195px;
+            object-fit: cover;
+            min-width: 100%;
+        }
+
+
+        .ant-card-meta {
+            margin-bottom: 5px;
+        }
+
+        .description {
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+        .link {
+            padding-left: 20px;
+            position: relative;
+            font-size: 1rem;
+            font-weight: 500;
+
+            &::before {
+                content: url(./assets/images/link.svg);
+                position: absolute;
+                left: 0;
+                top: -2px;
+            }
+        }
+
+        .ant-card-hoverable {
+            cursor: unset;
+        }
+    }
+} 
+
+
+.drawer-container {
+    width: 100% !important;
+    @media (min-width: 768px) {
+        width: 500px !important;
+    }
+}
+
+
