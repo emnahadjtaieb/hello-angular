@@ -1,5 +1,9 @@
 @import "src/assets/sass/_common.scss";
 
+:root {
+    --header-height: 100px;
+}
+
 .teaser-standard-triple {
     display: flex;
     justify-content: center;

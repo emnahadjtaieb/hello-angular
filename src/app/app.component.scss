@@ -22,7 +22,7 @@ nz-header {
 }
 
 .ant-layout-header {
-  height: 100px;
+  height: var(--header-height);
   background: #ffffff;
 }
 
