@@ -16,15 +16,7 @@ html {
   }
 }
 
-body {
-  min-width: 320px;
-  background-color: $color-bg;
-  // -webkit-tap-highlight-color: transparent;
-  margin: 0;
-  padding: 0;
-  // verhindert verticals scrolling smartphone
-  overflow-x: hidden;
-}
+
 
 img {
   width: 100%;
